@@ -5,13 +5,15 @@ public class Book {
     private String title;
     private String author;
     private Double price;
+    private String releaseDate;
 
     // constructor
-    public Book(Integer id,String title, String author, Double price){
+    public Book(Integer id,String title, String author, Double price, String releaseDate){
         this.id = id;
         this.title = title;
         this.author = author;
         this.price = price;
+        this.releaseDate = releaseDate;
     }
 
     //getters
@@ -28,4 +30,6 @@ public class Book {
     public Double getPrice() {
         return price;
     }
+
+    public String getReleaseDate(){return releaseDate;}
 }

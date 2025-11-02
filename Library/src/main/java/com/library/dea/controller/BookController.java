@@ -10,10 +10,11 @@ import java.util.List;
 public class BookController {
 
     private final List<Book> books = List.of(
-            new Book(1,"Spring for begginers", "Mirali", 99.99),
-            new Book(2,"Sherlock Homes", "Aylin", 200.0),
-            new Book(3,"Rich Dad and Poor Dad", "Mirali", 99.99),
-            new Book(4,"Sidney Sheldon", "Shaxriyar", 400.0));
+            new Book(1,"Spring for begginers", "Mirali", 99.99,"10.10.2010"),
+            new Book(2,"Sherlock Homes", "Aylin", 200.0, "10.10.2010"),
+            new Book(3,"Rich Dad and Poor Dad", "Mirali", 99.99, "11.11.2011"),
+            new Book(4,"Sidney Sheldon", "Shaxriyar", 400.0, "10.06.2000"),
+            new Book(5,"Harry Potter", "Elmar", 500.0, "02.09.2011"));
 
     // 1 показать все книнги
     @GetMapping("/all")
