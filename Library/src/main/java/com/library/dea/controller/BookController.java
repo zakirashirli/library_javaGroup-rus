@@ -22,7 +22,7 @@ public class BookController {
         return books;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}") // 7?
     public Book getBookById(@PathVariable Integer id) {
         for (Book book : books) {
             if (book.getId().equals(id)){
@@ -31,4 +31,14 @@ public class BookController {
         }
         return null;
     }
+
+    // add new books with REST
+    @PostMapping("/add")
+    public String createBook(@RequestBody Book newBook) {
+        books.add(newBook);
+        return "New book created. " + newBook.getTitle();
+    }
+
+    // check new method
+    // JSON on postman
 }
