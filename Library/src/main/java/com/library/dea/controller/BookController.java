@@ -1,7 +1,6 @@
 package com.library.dea.controller;
 
-import com.library.dea.model.Book;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.library.dea.entity.Book;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

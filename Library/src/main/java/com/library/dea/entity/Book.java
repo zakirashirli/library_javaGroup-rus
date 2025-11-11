@@ -1,14 +1,18 @@
-package com.library.dea.model;
+package com.library.dea.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "books")
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
     private String author;
     private Double price;
     private String releaseDate;
 
-    // constructor
-//    public Book(){}
 
     public Book(Integer id,String title, String author, Double price, String releaseDate){
         this.id = id;
@@ -20,28 +24,13 @@ public class Book {
 
     //getters
 
+
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
     public String getReleaseDate() {
@@ -52,11 +41,27 @@ public class Book {
         this.releaseDate = releaseDate;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     public Double getPrice() {
         return price;
     }
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
