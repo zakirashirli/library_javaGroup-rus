@@ -13,6 +13,7 @@ public class Book {
     private Double price;
     private String releaseDate;
 
+    public Book(){}
 
     public Book(Integer id,String title, String author, Double price, String releaseDate){
         this.id = id;

@@ -31,14 +31,14 @@ public class BookController {
 
     // add new books with REST
     @PostMapping("/add")
-    public String createBook(@RequestBody Book newBook) {
-        return booksService.addBook(newBook);
+    public String createBook(@RequestBody Book book) {
+        return booksService.addBook(book);
     }
 
     // update book
     @PutMapping("/update/{id}")
-    public String updateBook(@PathVariable Integer id, @RequestBody Book updatedBook) {
-        return booksService.updateBook(id, updatedBook);
+    public String updateBook(@PathVariable Integer id, @RequestBody Book book) {
+        return booksService.updateBookById(id, book);
     }
 
     //delete book

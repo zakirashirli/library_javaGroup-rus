@@ -21,11 +21,11 @@ public class BookService {
         return bookRepository.findAll();
     }
 
-    public String addBook(@RequestBody Book book) {
-        if (book.getTitle() == null || book.getTitle().isEmpty()) {
+    public String addBook(@RequestBody Book newBook) {
+        if (newBook.getTitle() == null || newBook.getTitle().isEmpty()) {
             return "Title does not exist!";
         }
-        bookRepository.save(book);
+        bookRepository.save(newBook);
         return "Book added!";
     }
 
@@ -34,7 +34,7 @@ public class BookService {
         return bookRepository.findById(id);
     }
 
-    public String updateBook(@PathVariable Integer id, @RequestBody Book updatedBook) {
+    public String updateBookById(@PathVariable Integer id, @RequestBody Book updatedBook) {
         if (bookRepository.existsById(id)) {
             updatedBook.setId(id); // Kanan -> Nicat
             bookRepository.save(updatedBook);
