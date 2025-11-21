@@ -29,6 +29,24 @@ public class BookController {
         return booksService.getBookById(id);
     }
 
+    @GetMapping("/author/{author}")
+    public List<Book> getBookByAuthor(@PathVariable String author) {
+        return booksService.getBooksByAuthor(author);
+    }
+
+    @GetMapping("/search/{word}")
+    public List<Book> getBookByTitleContainig(@PathVariable String word) {
+        return booksService.getBooksByTitleContaining(word);
+    }
+
+    @GetMapping("/price/between/{min}/{max}")
+    public List<Book> getBookByBetweenPrice(
+            @PathVariable Double min,
+            @PathVariable Double max
+    ){
+        return booksService.getBooksMinMax(min, max);
+    }
+
     // add new books with REST
     @PostMapping("/add")
     public String createBook(@RequestBody Book book) {

@@ -20,6 +20,15 @@ public class BookService {
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
     }
+    public List<Book> getBooksByAuthor(String author) {
+        return bookRepository.findByAuthor(author);
+    }
+    public List<Book> getBooksByTitleContaining(String word) {
+        return bookRepository.findByTitleContaining(word);
+    }
+    public List<Book> getBooksMinMax(Double min, Double max) {
+        return bookRepository.findByPriceBetween(min, max);
+    }
 
     public String addBook(@RequestBody Book newBook) {
         if (newBook.getTitle() == null || newBook.getTitle().isEmpty()) {
